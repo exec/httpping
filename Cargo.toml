@@ -1,0 +1,32 @@
+[package]
+name = "httpping"
+version = "0.2.0"
+edition = "2021"
+description = "Advanced HTTP monitoring and ping utility for modern infrastructure"
+authors = ["httpping contributors"]
+license = "MIT"
+repository = "https://github.com/username/httpping"
+readme = "README.md"
+keywords = ["http", "ping", "monitoring", "network", "cli"]
+categories = ["command-line-utilities", "network-programming"]
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+clap = { version = "4.0", features = ["derive"] }
+colored = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+indicatif = "0.17"
+console = "0.15"
+ctrlc = "3.2"
+rand = "0.8"
+serde_yaml = "0.9"
+url = "2.4"
+rustls = "0.21"
+webpki-roots = "0.25"
+
+[[bin]]
+name = "httpping"
+path = "src/main.rs"

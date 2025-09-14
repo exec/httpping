@@ -1,0 +1,37 @@
+targets:
+- name: Production API
+  url: https://api.example.com/health
+  method: GET
+  headers: {}
+  expected_status:
+  - 200
+  expected_content: '"status":"ok"'
+  timeout_seconds: 5.0
+  interval_seconds: 30.0
+- name: Main Website
+  url: https://example.com
+  method: GET
+  headers: {}
+  expected_status:
+  - 200
+  - 301
+  - 302
+  expected_content: null
+  timeout_seconds: 10.0
+  interval_seconds: 60.0
+settings:
+  default_interval: 60.0
+  default_timeout: 10.0
+  max_consecutive_failures: 3
+  health_check_window_minutes: 60
+  output_format: pretty
+  enable_colors: true
+  log_file: null
+alerts:
+- name: Slack Alerts
+  webhook_url: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
+  trigger_on:
+  - !consecutive_failures 3
+  - !response_time_ms 5000
+  - !cert_expiring_days 7
+  cooldown_minutes: 30
