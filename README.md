@@ -37,7 +37,7 @@ httpping is a powerful command-line tool that goes beyond simple HTTP pings to p
 
 ### Install
 ```bash
-cargo install --git https://github.com/username/httpping
+cargo install --git https://github.com/exec/httpping
 ```
 
 ### Simple Usage
@@ -181,7 +181,7 @@ httpping monitor -c <CONFIG>        # Run monitoring from config
 ## 🛠️ Development
 
 ```bash
-git clone https://github.com/username/httpping
+git clone https://github.com/exec/httpping
 cd httpping
 cargo build --release
 ./target/release/httpping --help
