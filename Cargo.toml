@@ -1,6 +1,6 @@
 [package]
 name = "httpping"
-version = "0.2.0"
+version = "0.2.2"
 edition = "2021"
 description = "Advanced HTTP monitoring and ping utility for modern infrastructure"
 authors = ["httpping contributors"]
@@ -12,7 +12,7 @@ categories = ["command-line-utilities", "network-programming"]
 
 [dependencies]
 tokio = { version = "1.0", features = ["full"] }
-reqwest = { version = "0.11", features = ["json"] }
+reqwest = { version = "0.11", features = ["json", "rustls-tls"], default-features = false }
 clap = { version = "4.0", features = ["derive"] }
 colored = "2.0"
 serde = { version = "1.0", features = ["derive"] }
